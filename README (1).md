@@ -34,5 +34,7 @@ We learned MRI safety. Here are some important things to consider.
  - Certain medical implants should not be brought into the MRI room because they will cease to function
  - The MRI machine should only be quenched in emergency scenarios because it is a very expensive process
 
+and now
+
 > Written with [StackEdit](https://stackedit.io/).
 
