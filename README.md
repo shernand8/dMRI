@@ -50,6 +50,12 @@ The expected clusters are very different from the clusters obtained using k-mean
 
 ## Reproducibility
 ### Dependencies
-(list the tool and library you used)
+
 * numpy
 * sklearn.cluster
+* pandas
+* matplotlib
+* Overleaf
+* Markdown
+* Github
+* Google colab
