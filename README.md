@@ -1,37 +1,55 @@
-# dMRI
-## Week one 
-Throughout the week, we began to have daily meeting at [Saint Justine's](https://www.chusj.org/). 
+# Neonatal Brain White Matter Development Evaluation using dMR
 
-We started to learn how to code with python. We began by creating two simple graphs which plotted the distributions of birth age and birth weight of a sample of 90 babies. Here are some highlights. 
+## Summary
+(leave it empty)
 
-	plt.figure(figsize=(5,5))
+## Background
+(leave it empty)
 
-	plt.hist(scan_age,color='r',bins = 18)
+## Method
 
-	plt.title('Birth Weight Distribution')
+### Data 
 
-	plt.xlabel('Birth Weight (in kg)')
+For this experiment, data was obtained from 489 babies some of which were born prematurely. The data used includes the following: 
 
-	plt.ylabel('Frequency')
+* dMRI scans 
+* Gestational ages 
+* Age at which babies were scanned
+* Head circumference when scanned
+* Weight at birth
 
-Next we learned how to create a bar graph that would plot different categories along the same axis. We also displayed a legend for the first time and learned how to include error bars. Here are some highlights. 
+The gestational ages of babies scanned between 40 and 41 weeks are shown in the following distribution. 
 
-	plt.bar([9, 10, 11],Height_bar3, width = 0.5, color = ['red', 'orange', 'blue'])
+![Gestational Age Distribution](https://drive.google.com/uc?id=1LCd1YB8YDyCEmqMZCM0EvNPkMUssbpJb) 
 
-	plt.errorbar([9, 10, 11], [ave_shc_vpreterm, ave_shc_modpreterm, ave_shc_term], yerr = [np.std(vpreterm1 ['scan_head_circumference'].values), np.std(modpreterm1 ['scan_head_circumference'].values), np.std(term1 ['scan_head_circumference'].values)], fmt = 'o', color = 'black', markersize = 2)
+The birth weights of babies scanned between 40 and 41 weeks are shown in the following distribution. 
 
-Our next challenge was to graph a scatter plot, this time using data from all the babies that we had access to. We also had to include a trendline. Here are some highlights. 
+![Birth Age Distribution](https://drive.google.com/uc?id=1-BBC-bT_xpat5GRlipMJzbpPlEcna2aN)
 
-	a, b = np.polyfit(df['birth_age'].values, df['birth_weight'].values, 1)
+### Experiment 1: use k-means to classify the data 
 
-	plt.plot(df['birth_age'].values, a*df['birth_age'].values+b, color = 'black')
+In this experiment, a scatter plot of head circumference when scanned and age when scanned was graphed. 
 
-## Week two
-We learned MRI safety. Here are some important things to consider. 
+![Single Color Scatter](https://drive.google.com/uc?id=1cIFhH1HASVNz49xkZYz9YDaMRgJ4k18f)
 
- - Ferromagnetic objects should not be brought into the MRI room
- - Other metallic objects should not be worn while being scanned because they can heat up quickly and cause burns 
- - Certain medical implants should not be brought into the MRI room because they will cease to function
- - The MRI machine should only be quenched in emergency scenarios because it is a very expensive process
+This plot includes the data from 487 babies, excluding the data of babies whose head circumferences were not provided. 
 
-> Written with [StackEdit](https://stackedit.io/).
+To classify the data using k-means, the KMeans library was imported. To use this code, an array of every data entry must be defined. After this has been done, the KMeans function was used to set the number of clusters to three. Then the labels for each data entry were printed. 
+
+### Results 
+
+The classification result for the entire dataset is shown in the following figure. 
+
+![First Classification Result](https://drive.google.com/uc?id=1efW8intCY-An-45jMErLoqx51xpKzIhu) 
+
+These results are not what we expected. When we selected clusters according to birth age ranges, we obtained the following clusters. 
+
+![Expected Classification Result](https://drive.google.com/uc?id=1-TZJxv_yPWlQjqlcKh-3MrE7LTEb5pqF) 
+
+The expected clusters are very different from the clusters obtained using k-means. This means that the data entries were more closely related by a factor that was not our choses birth age ranges. We may have obtained these results because birth age range cannot be predicted easily from scan head circumference and from birth weight, especially considering that the babies were scanned at varying times following their births. It is also possible that the age ranges we used affected our results since we grouped moderate and late preterms together as well as extreme and very preterms together. 
+
+## Reproducibility
+### Dependencies
+(list the tool and library you used)
+* numpy
+* sklearn.cluster
