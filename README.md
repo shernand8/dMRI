@@ -1,10 +1,10 @@
 # Neonatal Brain White Matter Development Evaluation using dMR
 
 ## Summary
-(leave it empty)
+
 
 ## Background
-(leave it empty)
+
 
 ## Method
 
