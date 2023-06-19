@@ -1,10 +1,4 @@
-<<<<<<< HEAD
 # Neonatal Brain White Matter Development Evaluation using dMR
-=======
-# What we learned
-## Week one 
-Throughout the week, we began to have daily meeting at [Saint Justine's](https://www.chusj.org/). 
->>>>>>> 1b36872fcf9239dc5a1820ccc15ae0dae15e474f
 
 ## Summary
 (leave it empty)
@@ -40,7 +34,6 @@ In this experiment, a scatter plot of head circumference when scanned and age wh
 
 This plot includes the data from 487 babies, excluding the data of babies whose head circumferences were not provided. 
 
-<<<<<<< HEAD
 To classify the data using k-means, the KMeans library was imported. To use this code, an array of every data entry must be defined. After this has been done, the KMeans function was used to set the number of clusters to three. Then the labels for each data entry were printed. 
 
 ### Results 
@@ -60,8 +53,3 @@ The expected clusters are very different from the clusters obtained using k-mean
 (list the tool and library you used)
 * numpy
 * sklearn.cluster
-=======
-and now
-
-> Written with [StackEdit](https://stackedit.io/).
->>>>>>> 1b36872fcf9239dc5a1820ccc15ae0dae15e474f
